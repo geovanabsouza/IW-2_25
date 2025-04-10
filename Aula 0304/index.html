@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 03/04</title>
+    <script>
+        function exibirMenu() {
+            return prompt(
+                "===== MENU INTERATIVO =====\n" +
+                "1 - Ver mensagem\n" +
+                "2 - Calcular média\n" +
+                "3 - Sair\n" +
+                "Escolha uma opção:"
+            );
+        }
+
+        function executarOpcao(opcao) {
+            switch (opcao) {
+                case "1":
+                    alert("Olá! Bem-vindo ao menu interativo.");
+                    break;
+
+                    case "2":
+                    let n1 = parseFloat(prompt("Digite a primeira nota:"));
+                    let n2 = parseFloat(prompt("Digite a segunda nota:"));
+                    if (isNaN(n1) || isNaN(n2) || n1 < 0 || n1 > 10 || n2 < 0 || n2 > 10) {
+                        alert("Erro: Você deve digitar números válidos.");
+                    } else {
+                        let media = (n1 + n2) / 2;
+                        if (media >= 7) {
+                            alert("Sua média é: "+ media + ". Você foi aprovado.");
+                        }else if ((media > 5) && (media < 7)){
+                            alert("Sua média é: "+ media + ". Você está de recuperação.");
+                        }else {
+                            alert("Sua média é: "+ media + ". Você foi reprovado.");
+                        }
+                    }
+                    break;
+                case "3":
+                    alert("Saindo... Até mais!");
+                    return false; // Encerra o loop
+                default:
+                    alert("Opção inválida. Tente novamente.");
+            }
+            return true; // Continua o loop
+        }
+
+        function iniciarMenu() {
+            let continuar = true;
+            while (continuar) {
+                let opcao = exibirMenu();
+                continuar = executarOpcao(opcao);
+            }
+        }
+
+        // Inicia o menu quando a página carregar
+        iniciarMenu();
+    </script>
+</head>
+<body>
+    
+    
+</body>
+</html>
