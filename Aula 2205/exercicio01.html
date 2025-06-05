@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01</title>
+</head>
+<body>
+    <button id="MostrarHora">Clique</button>
+    <p id="HoraAtual"></p>
+
+    <script>
+
+        document.getElementById("MostrarHora").addEventListener("click", function () {
+
+            //Criar uma variável para armazenar a hora atual//
+
+            const horario = new Date ();
+
+            //Pegar as horas, minutos e segundos separadamente//
+
+            const hora = horario.getHours();
+            const minutos = horario.getMinutes();
+            const segundos = horario.getSeconds();
+
+
+            //Montar uma string com a hora formatada//
+
+            const ajuste_h = hora.toString().padStart(2, '0');
+            const ajuste_m = minutos.toString().padStart(2, '0');
+            const ajuste_s = segundos.toString().padStart(2, '0');
+
+            //Criando a formatação final//
+
+            const hora_final = `${ajuste_h}: ${ajuste_m}: ${ajuste_s}`;
+
+            //Puxando função completa//
+
+            document.getElementById("HoraAtual").innerText = hora_final;
+
+
+        })
+    </script>
+    
+</body>
+</html>

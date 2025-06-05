@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exercício 07</title>
+  <style>
+    input {
+      padding: 8px;
+      font-size: 16px;
+      border: 2px solid gray;
+      border-radius: 4px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    input.invalido {
+      border-color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <input type="text" id="campoTexto" placeholder="Digite algo..." />
+
+  <script>
+    const campo = document.getElementById('campoTexto');
+
+    campo.addEventListener('input', () => {
+      if (campo.value.length < 5) {
+        campo.classList.add('invalido');
+      } else {
+        campo.classList.remove('invalido');
+      }
+    });
+  </script>
+
+</body>
+</html>

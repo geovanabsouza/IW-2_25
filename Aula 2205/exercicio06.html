@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercício 06</title>
+</head>
+<body>
+
+  <div id="conteudo">
+    Boa tarde!Eu sou a Geovana.
+  </div>
+
+  <button id="botaoCopiar">Copiar texto</button>
+
+  <script>
+    const botao = document.getElementById('botaoCopiar');
+    const divConteudo = document.getElementById('conteudo');
+
+    botao.addEventListener('click', () => {
+      const texto = divConteudo.innerText;
+
+      navigator.clipboard.writeText(texto).then(() => {
+        alert('Texto copiado!');
+      }).catch(() => {
+        alert('Erro ao copiar o texto.');
+      });
+    });
+  </script>
+
+</body>
+</html>
